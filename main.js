@@ -1,4 +1,9 @@
 
+let startGame = document.getElementById("startButton").addEventListener("click, startGame");
+
+function startGame() {
+    
+}
 
 let firstCard = 9;
 let secondCard = 12;
