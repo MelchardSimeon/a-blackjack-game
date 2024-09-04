@@ -36,9 +36,9 @@ button {
     background-color: fuchsia;
     margin-top: 20px;
     font-size: 18px;
-    color: black;
     font-weight: 500;
-    transition: opacity 0.15s;  
+    transition: opacity 0.15s;
+    color: black;
 }
 
 button:hover {

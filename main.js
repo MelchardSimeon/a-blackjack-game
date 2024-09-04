@@ -1,24 +1,32 @@
 
-let startGame = document.getElementById("startButton").addEventListener("click, startGame");
-
-function startGame() {
-    
-}
-
+let startButton = document.getElementById("startButton").addEventListener("click", startGame);
 let firstCard = 9;
 let secondCard = 12;
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = true; 
+let messageEl = document.getElementById("message-el")
+let message = ""    
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.querySelector(".cards-el")
+let newCardButton = document.getElementById("new-card-button").addEventListener("click", newCard);
 
-if (sum < 21) {
-    console.log("Do you want to draw another card?")
-} else if (sum === 21) {
-    console.log("congrats, you won!")
-    hasBlackJack = true;
-} else {
-    console.log('byebye!')
-    isAlive = false;
-}
 
-console.log(isAlive)
+function startGame() {
+        
+    if (sum < 21) {
+        message = "Do you want to draw another card?"
+    } else if (sum === 21) {
+        message = "congrats, you won!"
+        hasBlackJack = true;
+    } else {
+        message = 'byebye!'
+        isAlive = false;
+    }
+        messageEl.textContent = message;
+        sumEl.textContent = "Sum: " + sum;
+        cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    }
+
+
+    
