@@ -2,7 +2,7 @@
 let startButton = document.getElementById("startButton").addEventListener("click", startGame);
 let firstCard = 9;
 let secondCard = 12;
-
+let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true; 
@@ -12,9 +12,17 @@ let sumEl = document.getElementById("sum-el")
 let cardsEl = document.querySelector(".cards-el")
 let newCardButton = document.getElementById("new-card-button").addEventListener("click", newCard);
 
-
 function startGame() {
-    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    runGame();
+}
+
+
+function runGame() {
+        cardsEl.textContent = "Cards: "
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " ";
+    }
+
     sumEl.textContent = "Sum: " + sum;
         
     if (sum < 21) {
@@ -33,7 +41,9 @@ function startGame() {
     function newCard() {
         let card = 10;
         sum += card;
-        startGame()
+        cards.push(card)
+        console.log(cards)
+        runGame()
     }
 
     console.log(newCardButton)
