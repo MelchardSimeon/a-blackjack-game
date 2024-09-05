@@ -13,8 +13,15 @@ let cardsEl = document.querySelector(".cards-el")
 let newCardButton = document.getElementById("new-card-button").addEventListener("click", newCard);
 
 function getRandomCard() {
-    //randomNumber = Math.floor(Math.random() * 100 + 1)
-    return Math.floor(Math.random() * 13) + 1
+    randomNumber = Math.floor(Math.random() * 13) + 1;
+
+    if (randomNumber === 1) {
+        return 11
+    } else if (randomNumber > 10) {
+        return 10
+    } else {
+        return randomNumber
+    }
 }
 
 function startGame() {
