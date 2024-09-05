@@ -1,9 +1,7 @@
 
 let startButton = document.getElementById("startButton").addEventListener("click", startGame);
-let firstCard = getRandomCard();
-let secondCard = getRandomCard();
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard;
+let cards = []
+let sum = 0;
 let hasBlackJack = false;
 let isAlive = true; 
 let messageEl = document.getElementById("message-el")
@@ -25,6 +23,10 @@ function getRandomCard() {
 }
 
 function startGame() {
+    let firstCard = getRandomCard();
+    let secondCard = getRandomCard();
+    sum = firstCard + secondCard
+    cards = [firstCard, secondCard]
     runGame();
 }
 
