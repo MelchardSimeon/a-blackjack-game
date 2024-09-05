@@ -1,6 +1,6 @@
 let player = {
     name: "Melchard",
-    chips: 185;
+    chips: 185
 }
 let startButton = document.getElementById("startButton").addEventListener("click", startGame);
 let cards = []
@@ -14,6 +14,9 @@ let cardsEl = document.querySelector(".cards-el")
 let newCardButton = document.getElementById("new-card-button").addEventListener("click", newCard);
 let playerEl = document.getElementById("player-el")
 
+playerEl.textContent = player.name + ": $" + player.chips;
+
+console.log(playerEl)
 
 function getRandomCard() {
     randomNumber = Math.floor(Math.random() * 13) + 1;
